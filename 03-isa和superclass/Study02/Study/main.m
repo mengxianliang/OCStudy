@@ -10,6 +10,11 @@
 #import <malloc/malloc.h>
 
 @interface Person : NSObject
+{
+    NSInteger _sex;
+}
+
+@property (nonatomic, assign) NSInteger age;
 
 - (void)personInstanceMethod;
 
@@ -76,8 +81,23 @@ int main(int argc, const char * argv[]) {
         [Person classMethod]; // 类方法
         
         Class class = person.superclass;
+        unsigned int count = 0;
         
+        unsigned int count2 = 0;
         
+        objc_property_t* properties = class_copyPropertyList(person.class, &count);
+        
+        Ivar* ivarList = class_copyIvarList(person.class, &count2);
+        
+        for (int i = 0; i < count; i++) {
+            objc_property_t property = properties[i];
+            NSLog(@"propertyName = %s",property_getName(property));
+        }
+        
+        for (int i = 0; i < count2; i++) {
+            Ivar ivar = ivarList[i];
+            NSLog(@"ivarName = %s",ivar_getName(ivar));
+        }
         
     }
     return 0;
