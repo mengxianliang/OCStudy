@@ -33,10 +33,31 @@
     NSKeyValueObservingOptions options =  NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
     [self.person1 addObserver:self forKeyPath:@"age" options:options context:nil];
     
+    [self printClassMethodList:object_getClass(self.person1)];
+    [self printClassMethodList:object_getClass(self.person2)];
+    
+}
+
+- (void)printClassMethodList:(Class)cls {
+    unsigned int count;
+    Method *methodList = class_copyMethodList(cls, &count);
+    NSMutableString *methodNames = [[NSMutableString alloc] init];
+    for (int i = 0; i < count; i++) {
+        Method method = methodList[i];
+        [methodNames appendString:NSStringFromSelector(method_getName(method))];
+        [methodNames appendString:@", "];
+    }
+    free(methodList);
+    
+    NSLog(@"%@的方法有%@", NSStringFromClass(cls), methodNames);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.person1.age = 20;
+//    self.person1.age = 20;
+    
+    // 手动触发
+    [self.person1 willChangeValueForKey:@"age"];
+    [self.person1 didChangeValueForKey:@"age"];
 }
 
 // 当监听属性值发生改变时调用
