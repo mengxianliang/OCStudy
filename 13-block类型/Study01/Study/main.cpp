@@ -106,7 +106,8 @@ struct __AtAutoreleasePool {
 };
 
 #define __OFFSETOFIVAR__(TYPE, MEMBER) ((long long) &((TYPE *)0)->MEMBER)
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_6d1d33_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"age = %d, height = %d",21};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_27ab99_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"age = %d, height = %d",21};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_27ab99_mi_1 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"block1 = %@",11};
 
 
 
@@ -34252,13 +34253,43 @@ static void __main_block_func_0(struct __main_block_impl_0 *__cself) {
   int age = __cself->age; // bound by copy
   int *height = __cself->height; // bound by copy
 
-            NSLog((NSString *)&__NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_6d1d33_mi_0,age,(*height));
+            NSLog((NSString *)&__NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_27ab99_mi_0,age,(*height));
         }
 
 static struct __main_block_desc_0 {
   size_t reserved;
   size_t Block_size;
 } __main_block_desc_0_DATA = { 0, sizeof(struct __main_block_impl_0)};
+
+struct __main_block_impl_1 {
+    
+  struct __block_impl impl;
+  struct __main_block_desc_1* Desc;
+    
+  struct __block_impl *block0;
+    
+  __main_block_impl_1(void *fp, struct __main_block_desc_1 *desc, void *_block0, int flags=0) : block0((struct __block_impl *)_block0) {
+    impl.isa = &_NSConcreteStackBlock;
+    impl.Flags = flags;
+    impl.FuncPtr = fp;
+    Desc = desc;
+  }
+};
+static void __main_block_func_1(struct __main_block_impl_1 *__cself) {
+  void (*block0)() = (void (*)())__cself->block0; // bound by copy
+
+            NSLog((NSString *)&__NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_27ab99_mi_1,block0);
+        }
+static void __main_block_copy_1(struct __main_block_impl_1*dst, struct __main_block_impl_1*src) {_Block_object_assign((void*)&dst->block0, (void*)src->block0, 7/*BLOCK_FIELD_IS_BLOCK*/);}
+
+static void __main_block_dispose_1(struct __main_block_impl_1*src) {_Block_object_dispose((void*)src->block0, 7/*BLOCK_FIELD_IS_BLOCK*/);}
+
+static struct __main_block_desc_1 {
+  size_t reserved;
+  size_t Block_size;
+  void (*copy)(struct __main_block_impl_1*, struct __main_block_impl_1*);
+  void (*dispose)(struct __main_block_impl_1*);
+} __main_block_desc_1_DATA = { 0, sizeof(struct __main_block_impl_1), __main_block_copy_1, __main_block_dispose_1};
 int main(int argc, const char * argv[]) {
     /* @autoreleasepool */ { __AtAutoreleasePool __autoreleasepool; 
 
@@ -34266,12 +34297,19 @@ int main(int argc, const char * argv[]) {
 
         static int height = 10;
 
-        void (*block)(void) = ((void (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, age, &height));
+        void (*block0)(void) = ((void (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, age, &height));
+
+        void (*block1)(void) = ((void (*)())&__main_block_impl_1((void *)__main_block_func_1, &__main_block_desc_1_DATA, (void *)block0, 570425344));
 
         age = 20;
         height = 20;
 
-        ((void (*)(__block_impl *))((__block_impl *)block)->FuncPtr)((__block_impl *)block);
+        ((void (*)(__block_impl *))((__block_impl *)block0)->FuncPtr)((__block_impl *)block0);
+        ((void (*)(__block_impl *))((__block_impl *)block1)->FuncPtr)((__block_impl *)block1);
+
+
+
+
     }
     return 0;
 }
