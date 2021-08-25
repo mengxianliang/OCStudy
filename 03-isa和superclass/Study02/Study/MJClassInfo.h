@@ -25,14 +25,14 @@ typedef uint16_t mask_t;
 typedef uintptr_t cache_key_t;
 
 struct bucket_t {
-    cache_key_t _key;
-    IMP _imp;
+    cache_key_t _key; //SEL作为key
+    IMP _imp; // 函数内存地址
 };
 
 struct cache_t {
-    bucket_t *_buckets;
-    mask_t _mask;
-    mask_t _occupied;
+    bucket_t *_buckets; // 哈希表
+    mask_t _mask; //_buckets长度-1
+    mask_t _occupied; //以缓存的方法数量
 };
 
 struct entsize_list_tt {
