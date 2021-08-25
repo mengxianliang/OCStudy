@@ -51,7 +51,16 @@ void c_other(id self, SEL _cmd)
         return YES;
     }
     
-    return  [super resolveInstanceMethod:sel];;
+    return  [super resolveInstanceMethod:sel];
+}
+
++ (BOOL)resolveClassMethod:(SEL)sel {
+    // 动态添加test方法实现
+    if (sel == @selector(test)) {
+        class_addMethod(object_getClass(self), sel, (IMP)c_other, "v16@0:8");
+        return YES;
+    }
+    return  [super resolveInstanceMethod:sel];
 }
 
 @end
