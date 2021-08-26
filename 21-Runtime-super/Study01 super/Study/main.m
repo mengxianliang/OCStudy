@@ -6,14 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Person.h"
+#import "Student.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        Person *person = [[Person alloc] init];
-        [person test];
-//        @selector(test)
+        Student *student = [[Student alloc] init];
     }
     return 0;
 }
