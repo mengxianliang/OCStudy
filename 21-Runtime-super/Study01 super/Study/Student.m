@@ -12,6 +12,8 @@
 
 - (void)run {
     [super run];
+    
+    
 }
 
 //- (instancetype)init {
@@ -29,17 +31,5 @@
 //    }
 //    return self;
 //}
-
-@end
-
-@implementation NSObject
-
-- (Class)class {
-    return object_getClass(self);
-}
-
-- (Class)superclass {
-    return object_getClass(object_getClass(self));
-}
 
 @end
