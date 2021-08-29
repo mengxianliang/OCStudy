@@ -11,7 +11,6 @@
 @implementation NSMutableArray (Extension)
 
 + (void)load {
-    
     Class arrayClass = NSClassFromString(@"__NSArrayM");
     Method method1 = class_getInstanceMethod(arrayClass, @selector(insertObject:atIndex:));
     Method method2 = class_getInstanceMethod(arrayClass, @selector(xl_insertObject:atIndex:));

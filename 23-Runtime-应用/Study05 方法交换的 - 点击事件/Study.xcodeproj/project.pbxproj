@@ -18,6 +18,7 @@
 		5ED8CA8F26DA39B800C20D8E /* StudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CA8E26DA39B800C20D8E /* StudyUITests.m */; };
 		5ED8CAA426DB8A4600C20D8E /* UIControl+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CAA326DB8A4600C20D8E /* UIControl+Extension.m */; };
 		5ED8CAA726DB91C700C20D8E /* NSMutableArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CAA626DB91C700C20D8E /* NSMutableArray+Extension.m */; };
+		5ED8CAAD26DB98C500C20D8E /* NSMutableDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CAAC26DB98C500C20D8E /* NSMutableDictionary+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		5ED8CAA326DB8A4600C20D8E /* UIControl+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Extension.m"; sourceTree = "<group>"; };
 		5ED8CAA526DB91C700C20D8E /* NSMutableArray+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Extension.h"; sourceTree = "<group>"; };
 		5ED8CAA626DB91C700C20D8E /* NSMutableArray+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Extension.m"; sourceTree = "<group>"; };
+		5ED8CAAB26DB98C500C20D8E /* NSMutableDictionary+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Extension.h"; sourceTree = "<group>"; };
+		5ED8CAAC26DB98C500C20D8E /* NSMutableDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				5ED8CAA326DB8A4600C20D8E /* UIControl+Extension.m */,
 				5ED8CAA526DB91C700C20D8E /* NSMutableArray+Extension.h */,
 				5ED8CAA626DB91C700C20D8E /* NSMutableArray+Extension.m */,
+				5ED8CAAB26DB98C500C20D8E /* NSMutableDictionary+Extension.h */,
+				5ED8CAAC26DB98C500C20D8E /* NSMutableDictionary+Extension.m */,
 				5ED8CA7026DA39AB00C20D8E /* Main.storyboard */,
 				5ED8CA7326DA39B700C20D8E /* Assets.xcassets */,
 				5ED8CA7526DA39B700C20D8E /* LaunchScreen.storyboard */,
@@ -281,6 +286,7 @@
 				5ED8CA6926DA39AB00C20D8E /* AppDelegate.m in Sources */,
 				5ED8CA7A26DA39B700C20D8E /* main.m in Sources */,
 				5ED8CAA426DB8A4600C20D8E /* UIControl+Extension.m in Sources */,
+				5ED8CAAD26DB98C500C20D8E /* NSMutableDictionary+Extension.m in Sources */,
 				5ED8CA6C26DA39AB00C20D8E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

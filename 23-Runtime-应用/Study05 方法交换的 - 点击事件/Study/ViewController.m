@@ -14,6 +14,7 @@
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -21,6 +22,12 @@
     
     NSMutableArray *arr = [[NSMutableArray alloc] init];
     [arr addObject:obj];
+    
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+//    [dic setObject:obj forKey:@"obj"];
+    dic[@"obj"] = obj;
+    
+    [UIFont systemFontOfSize:17];
     
 }
 
