@@ -17,10 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 获取当前runLoop
+    NSRunLoop * runLoop1 = [NSRunLoop currentRunLoop];
+    // 获取主runLoop
+    NSRunLoop * runLoop2 = [NSRunLoop mainRunLoop];
     
-    [NSRunLoop currentRunLoop];
-    
-    CFRunLoopGetCurrent();
+    // 获取当前runLoop
+    CFRunLoopRef runLoop3 = CFRunLoopGetCurrent();
+    // 获取主runLoop
+    CFRunLoopRef runLoop4 = CFRunLoopGetMain();
     
 }
 
