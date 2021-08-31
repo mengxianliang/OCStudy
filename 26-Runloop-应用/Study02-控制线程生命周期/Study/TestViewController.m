@@ -27,11 +27,10 @@
     [self.view addSubview:button];
     
     self.thread = [[XLThread alloc] init];
-    [self.thread run];
 }
 
 - (void)back {
-    [self.thread stop];
+//    [self.thread stop];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

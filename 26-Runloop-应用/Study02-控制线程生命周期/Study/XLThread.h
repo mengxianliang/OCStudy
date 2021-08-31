@@ -14,11 +14,6 @@ typedef void(^XLThreadActionBlock)(void);
 @interface XLThread : NSThread
 
 /**
- 开启线程
- */
-- (void)run;
-
-/**
  执行任务 - block 方法
  */
 - (void)executeTaskWithBlock:(XLThreadActionBlock)block;
