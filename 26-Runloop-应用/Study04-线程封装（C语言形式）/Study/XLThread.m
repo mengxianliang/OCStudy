@@ -22,8 +22,6 @@
 
 @interface XLThread ()
 
-@property (nonatomic, assign) BOOL stopRunLoop;
-
 @property (nonatomic, strong) NSThread *thread;
 
 @end
@@ -32,17 +30,25 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        __weak typeof(self)weakSelf = self;
+        
         self.thread = [[NSThread alloc] initWithBlock:^{
-            NSLog(@"NSRunLoop run start %@", [NSThread currentThread]);
-            // 添加source/timner/observer
-            [[NSRunLoop currentRunLoop] addPort:[[NSPort alloc] init] forMode:NSDefaultRunLoopMode];
-            // 添加结束循环条件
-            while (weakSelf && !weakSelf.stopRunLoop) {
-                NSLog(@"NSRunLoop run");
-                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-            }
-            NSLog(@"NSRunLoop run end %@", [NSThread currentThread]);
+            NSLog(@"NSRunLoop run start ------");
+            // 创建上下文（要初始化一下结构体）
+            CFRunLoopSourceContext context = {0};
+            
+            // 创建source
+            CFRunLoopSourceRef source = CFRunLoopSourceCreate(kCFAllocatorDefault, 0, &context);
+            
+            // 往RunLoop中添加source
+            CFRunLoopAddSource(CFRunLoopGetCurrent(), source, kCFRunLoopDefaultMode);
+            
+            // 销毁source
+            CFRelease(source);
+            
+            // 启动(1.0e10是参考run方法源码),第三个参数代表执行完Source当前函数就会退出当前RunLoop
+            CFRunLoopRunInMode(kCFRunLoopDefaultMode, 1.0e10, false);
+            
+            NSLog(@"NSRunLoop run end ------");
         }];
         [self.thread start];
     }
@@ -52,7 +58,6 @@
 #pragma mark - 私有方法
 // 停止子线程的RunLoop
 - (void)stopCurrentRunLoop {
-    self.stopRunLoop = YES;
     CFRunLoopStop(CFRunLoopGetCurrent());
     self.thread = nil;
 }
