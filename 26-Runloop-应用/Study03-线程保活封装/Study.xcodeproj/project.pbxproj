@@ -16,8 +16,8 @@
 		5ED8CA7A26DA39B700C20D8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CA7926DA39B700C20D8E /* main.m */; };
 		5ED8CA8426DA39B800C20D8E /* StudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CA8326DA39B800C20D8E /* StudyTests.m */; };
 		5ED8CA8F26DA39B800C20D8E /* StudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8CA8E26DA39B800C20D8E /* StudyUITests.m */; };
+		C25468E726DDCBD6002666E4 /* XLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = C25468E626DDCBD6002666E4 /* XLThread.m */; };
 		C25468EA26DDD7D9002666E4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C25468E926DDD7D9002666E4 /* TestViewController.m */; };
-		C25468ED26DDFE40002666E4 /* XLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = C25468EC26DDFE40002666E4 /* XLThread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +56,10 @@
 		5ED8CA8A26DA39B800C20D8E /* StudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED8CA8E26DA39B800C20D8E /* StudyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyUITests.m; sourceTree = "<group>"; };
 		5ED8CA9026DA39B800C20D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C25468E526DDCBD6002666E4 /* XLThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLThread.h; sourceTree = "<group>"; };
+		C25468E626DDCBD6002666E4 /* XLThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLThread.m; sourceTree = "<group>"; };
 		C25468E826DDD7D9002666E4 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		C25468E926DDD7D9002666E4 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		C25468EB26DDFE40002666E4 /* XLThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLThread.h; sourceTree = "<group>"; };
-		C25468EC26DDFE40002666E4 /* XLThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLThread.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 				5ED8CA6E26DA39AB00C20D8E /* ViewController.m */,
 				C25468E826DDD7D9002666E4 /* TestViewController.h */,
 				C25468E926DDD7D9002666E4 /* TestViewController.m */,
-				C25468EB26DDFE40002666E4 /* XLThread.h */,
-				C25468EC26DDFE40002666E4 /* XLThread.m */,
+				C25468E526DDCBD6002666E4 /* XLThread.h */,
+				C25468E626DDCBD6002666E4 /* XLThread.m */,
 				5ED8CA7026DA39AB00C20D8E /* Main.storyboard */,
 				5ED8CA7326DA39B700C20D8E /* Assets.xcassets */,
 				5ED8CA7526DA39B700C20D8E /* LaunchScreen.storyboard */,
@@ -279,7 +279,7 @@
 				C25468EA26DDD7D9002666E4 /* TestViewController.m in Sources */,
 				5ED8CA6F26DA39AB00C20D8E /* ViewController.m in Sources */,
 				5ED8CA6926DA39AB00C20D8E /* AppDelegate.m in Sources */,
-				C25468ED26DDFE40002666E4 /* XLThread.m in Sources */,
+				C25468E726DDCBD6002666E4 /* XLThread.m in Sources */,
 				5ED8CA7A26DA39B700C20D8E /* main.m in Sources */,
 				5ED8CA6C26DA39AB00C20D8E /* SceneDelegate.m in Sources */,
 			);

@@ -9,19 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^XLThreadActionBlock)(void);
-
-@interface XLThread : NSThread
-
-/**
- 执行任务 - block 方法
- */
-- (void)executeTaskWithBlock:(XLThreadActionBlock)block;
-
-/**
- 停止线程
- */
-- (void)stop;
+@interface XLThread : NSObject
 
 @end
 
