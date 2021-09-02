@@ -16,6 +16,8 @@
 		C25467A726D4FB87002666E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C25467A626D4FB87002666E4 /* main.m */; };
 		C25467B126D4FB87002666E4 /* StudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25467B026D4FB87002666E4 /* StudyTests.m */; };
 		C25467BC26D4FB87002666E4 /* StudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25467BB26D4FB87002666E4 /* StudyUITests.m */; };
+		C25468F726E0C7A0002666E4 /* XLTestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C25468F626E0C7A0002666E4 /* XLTestBase.m */; };
+		C25468FD26E0C7EA002666E4 /* OSSpinLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C25468FC26E0C7EA002666E4 /* OSSpinLockDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		C25467B726D4FB87002666E4 /* StudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25467BB26D4FB87002666E4 /* StudyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyUITests.m; sourceTree = "<group>"; };
 		C25467BD26D4FB87002666E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C25468F526E0C7A0002666E4 /* XLTestBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLTestBase.h; sourceTree = "<group>"; };
+		C25468F626E0C7A0002666E4 /* XLTestBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLTestBase.m; sourceTree = "<group>"; };
+		C25468FB26E0C7EA002666E4 /* OSSpinLockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSpinLockDemo.h; sourceTree = "<group>"; };
+		C25468FC26E0C7EA002666E4 /* OSSpinLockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSSpinLockDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 		C254679326D4FB78002666E4 /* Study */ = {
 			isa = PBXGroup;
 			children = (
+				C25468F426E0C778002666E4 /* Locks */,
 				C254679426D4FB78002666E4 /* AppDelegate.h */,
 				C254679526D4FB78002666E4 /* AppDelegate.m */,
 				C254679726D4FB78002666E4 /* SceneDelegate.h */,
@@ -135,6 +142,17 @@
 				C25467BD26D4FB87002666E4 /* Info.plist */,
 			);
 			path = StudyUITests;
+			sourceTree = "<group>";
+		};
+		C25468F426E0C778002666E4 /* Locks */ = {
+			isa = PBXGroup;
+			children = (
+				C25468F526E0C7A0002666E4 /* XLTestBase.h */,
+				C25468F626E0C7A0002666E4 /* XLTestBase.m */,
+				C25468FB26E0C7EA002666E4 /* OSSpinLockDemo.h */,
+				C25468FC26E0C7EA002666E4 /* OSSpinLockDemo.m */,
+			);
+			path = Locks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C254679C26D4FB78002666E4 /* ViewController.m in Sources */,
+				C25468F726E0C7A0002666E4 /* XLTestBase.m in Sources */,
 				C254679626D4FB78002666E4 /* AppDelegate.m in Sources */,
 				C25467A726D4FB87002666E4 /* main.m in Sources */,
 				C254679926D4FB78002666E4 /* SceneDelegate.m in Sources */,
+				C25468FD26E0C7EA002666E4 /* OSSpinLockDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
