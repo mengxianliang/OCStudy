@@ -21,6 +21,9 @@
 		C254690026E1B72B002666E4 /* OSUnfairLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C25468FF26E1B72B002666E4 /* OSUnfairLockDemo.m */; };
 		C254690326E1BE85002666E4 /* MutexDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C254690226E1BE85002666E4 /* MutexDemo.m */; };
 		C254690626E1C2F1002666E4 /* MutexDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = C254690526E1C2F1002666E4 /* MutexDemo2.m */; };
+		C254690926E1F1ED002666E4 /* OSSpinLockDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = C254690826E1F1ED002666E4 /* OSSpinLockDemo2.m */; };
+		C254690C26E1F7A0002666E4 /* OSUnfairLockDemo2.m in Sources */ = {isa = PBXBuildFile; fileRef = C254690B26E1F7A0002666E4 /* OSUnfairLockDemo2.m */; };
+		C254690F26E1FEA8002666E4 /* MutexDemo3.m in Sources */ = {isa = PBXBuildFile; fileRef = C254690E26E1FEA8002666E4 /* MutexDemo3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,12 @@
 		C254690226E1BE85002666E4 /* MutexDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutexDemo.m; sourceTree = "<group>"; };
 		C254690426E1C2F1002666E4 /* MutexDemo2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutexDemo2.h; sourceTree = "<group>"; };
 		C254690526E1C2F1002666E4 /* MutexDemo2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutexDemo2.m; sourceTree = "<group>"; };
+		C254690726E1F1ED002666E4 /* OSSpinLockDemo2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSpinLockDemo2.h; sourceTree = "<group>"; };
+		C254690826E1F1ED002666E4 /* OSSpinLockDemo2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSSpinLockDemo2.m; sourceTree = "<group>"; };
+		C254690A26E1F7A0002666E4 /* OSUnfairLockDemo2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSUnfairLockDemo2.h; sourceTree = "<group>"; };
+		C254690B26E1F7A0002666E4 /* OSUnfairLockDemo2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSUnfairLockDemo2.m; sourceTree = "<group>"; };
+		C254690D26E1FEA8002666E4 /* MutexDemo3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MutexDemo3.h; sourceTree = "<group>"; };
+		C254690E26E1FEA8002666E4 /* MutexDemo3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MutexDemo3.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,12 +169,18 @@
 				C25468F626E0C7A0002666E4 /* XLTestBase.m */,
 				C25468FB26E0C7EA002666E4 /* OSSpinLockDemo.h */,
 				C25468FC26E0C7EA002666E4 /* OSSpinLockDemo.m */,
+				C254690726E1F1ED002666E4 /* OSSpinLockDemo2.h */,
+				C254690826E1F1ED002666E4 /* OSSpinLockDemo2.m */,
 				C25468FE26E1B72B002666E4 /* OSUnfairLockDemo.h */,
 				C25468FF26E1B72B002666E4 /* OSUnfairLockDemo.m */,
+				C254690A26E1F7A0002666E4 /* OSUnfairLockDemo2.h */,
+				C254690B26E1F7A0002666E4 /* OSUnfairLockDemo2.m */,
 				C254690126E1BE85002666E4 /* MutexDemo.h */,
 				C254690226E1BE85002666E4 /* MutexDemo.m */,
 				C254690426E1C2F1002666E4 /* MutexDemo2.h */,
 				C254690526E1C2F1002666E4 /* MutexDemo2.m */,
+				C254690D26E1FEA8002666E4 /* MutexDemo3.h */,
+				C254690E26E1FEA8002666E4 /* MutexDemo3.m */,
 			);
 			path = Locks;
 			sourceTree = "<group>";
@@ -301,9 +316,12 @@
 			files = (
 				C254690026E1B72B002666E4 /* OSUnfairLockDemo.m in Sources */,
 				C254679C26D4FB78002666E4 /* ViewController.m in Sources */,
+				C254690F26E1FEA8002666E4 /* MutexDemo3.m in Sources */,
+				C254690926E1F1ED002666E4 /* OSSpinLockDemo2.m in Sources */,
 				C25468F726E0C7A0002666E4 /* XLTestBase.m in Sources */,
 				C254690626E1C2F1002666E4 /* MutexDemo2.m in Sources */,
 				C254679626D4FB78002666E4 /* AppDelegate.m in Sources */,
+				C254690C26E1F7A0002666E4 /* OSUnfairLockDemo2.m in Sources */,
 				C25467A726D4FB87002666E4 /* main.m in Sources */,
 				C254679926D4FB78002666E4 /* SceneDelegate.m in Sources */,
 				C254690326E1BE85002666E4 /* MutexDemo.m in Sources */,
