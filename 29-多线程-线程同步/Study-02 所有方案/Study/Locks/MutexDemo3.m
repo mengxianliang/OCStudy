@@ -109,4 +109,28 @@
     pthread_cond_destroy(&_cond);
 }
 
+
+- (void)condAPI {
+    // 初始化锁
+    pthread_mutex_t mutex;
+    // NULL代表使用默认属性
+    pthread_mutex_init(&mutex, NULL);
+    
+    // 初始化条件
+    pthread_cond_t conditon;
+    pthread_cond_init(&conditon, NULL);
+    
+    // 等待条件（进入休眠，放开mutex锁；被唤醒后，会再次对mutex加锁）
+    pthread_cond_wait(&conditon, &mutex);
+    // 激活一个等待条件的线程
+    pthread_cond_signal(&conditon);
+    // 激活所有等待条件的线程
+    pthread_cond_broadcast(&conditon);
+    
+    // 销毁锁
+    pthread_mutex_destroy(&mutex);
+    // 销毁条件
+    pthread_cond_destroy(&conditon);
+}
+
 @end

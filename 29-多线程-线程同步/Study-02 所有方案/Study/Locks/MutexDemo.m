@@ -70,5 +70,28 @@
     pthread_mutex_destroy(&_moneyLock);
 }
 
+- (void)MutexAPI {
+    // 初始化属性
+    pthread_mutexattr_t attr;
+    pthread_mutexattr_init(&attr);
+    // 设置默认类型
+    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_DEFAULT);
+    
+    // 初始化锁
+    pthread_mutex_t mutex;
+    pthread_mutex_init(&mutex, &attr);
+    
+    // 尝试加锁
+    pthread_mutex_trylock(&mutex);
+    // 加锁
+    pthread_mutex_lock(&mutex);
+    // 解锁
+    pthread_mutex_unlock(&mutex);
+    
+    // 销毁属性
+    pthread_mutexattr_destroy(&attr);
+    // 销毁锁
+    pthread_mutex_destroy(&mutex);
+}
 
 @end
