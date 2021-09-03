@@ -57,6 +57,17 @@
 }
 
 
+- (void)API {
+    // 初始化
+    OSSpinLock lock = OS_SPINLOCK_INIT;
+    // 尝试加锁
+    OSSpinLockTry(&lock);
+    // 加锁
+    OSSpinLockLock(&lock);
+    // 解锁
+    OSSpinLockUnlock(&lock);
+}
+
 
 
 @end
