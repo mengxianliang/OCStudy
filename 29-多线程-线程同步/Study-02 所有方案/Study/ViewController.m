@@ -12,6 +12,7 @@
 #import "OSUnfairLockDemo2.h"
 #import "MutexDemo.h"
 #import "MutexDemo2.h"
+#import "MutexDemo3.h"
 
 @interface ViewController ()
 
@@ -22,8 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    OSUnfairLockDemo2 *demo = [[OSUnfairLockDemo2 alloc] init];
-    [demo ticketsTest];
+    MutexDemo3 *demo = [[MutexDemo3 alloc] init];
+    [demo otherTest];
     
 }
 

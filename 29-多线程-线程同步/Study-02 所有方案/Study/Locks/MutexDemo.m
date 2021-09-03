@@ -20,13 +20,13 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self __initMutex:_ticketLock];
-        [self __initMutex:_moneyLock];
+        [self __initMutex:&_ticketLock];
+        [self __initMutex:&_moneyLock];
     }
     return self;
 }
 
-- (void)__initMutex:(pthread_mutex_t)mutex {
+- (void)__initMutex:(pthread_mutex_t *)mutex {
     // 初始化属性
     pthread_mutexattr_t attr;
     pthread_mutexattr_init(&attr);
@@ -34,7 +34,7 @@
     pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_DEFAULT);
     
     // 初始化锁
-    pthread_mutex_init(&mutex, &attr);
+    pthread_mutex_init(mutex, &attr);
     
     //销毁属性
     pthread_mutexattr_destroy(&attr);
