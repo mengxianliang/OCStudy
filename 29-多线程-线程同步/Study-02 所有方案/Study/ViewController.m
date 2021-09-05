@@ -13,6 +13,8 @@
 #import "MutexDemo.h"
 #import "MutexDemo2.h"
 #import "MutexDemo3.h"
+#import "NSLockDemo.h"
+
 
 @interface ViewController ()
 
@@ -23,8 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    MutexDemo3 *demo = [[MutexDemo3 alloc] init];
-    [demo otherTest];
+    NSLockDemo *demo = [[NSLockDemo alloc] init];
+    [demo ticketsTest];
+    [demo moneyTest];
     
 }
 
