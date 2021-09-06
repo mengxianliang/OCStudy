@@ -3,14 +3,14 @@
 //  Study
 //
 //  Created by 孟宪亮 on 2021/9/5.
-//
+//  条件
 
 #import "NSConditionDemo.h"
 
 @interface NSConditionDemo ()
 
 // 条件
-@property (nonatomic, strong) NSCondition *cond;
+@property (nonatomic, strong) NSCondition *condition;
 
 @property (nonatomic, strong) NSMutableArray *arr;
 
@@ -21,15 +21,11 @@
 - (instancetype)init {
     if (self = [super init]) {
         
-        self.cond = [[NSCondition alloc] init];
+        self.condition = [[NSCondition alloc] init];
         
         self.arr = [[NSMutableArray alloc] init];
     }
     return self;
-}
-
-- (void)__initMutex:(pthread_mutex_t)mutex {
-    
 }
 
 
@@ -52,12 +48,12 @@
 // 线程一：删除数组元素
 - (void)__remove {
     
-    [self.cond lock];
+    [self.condition lock];
     NSLog(@"线程1: 【加锁】");
     
     if (self.arr.count == 0) {
         NSLog(@"线程1: 开始等待（条件不成立，开始休眠，并【解锁】）");
-        [self.cond wait];
+        [self.condition wait];
         NSLog(@"线程1: 结束等待（接收到条件成立，【加锁】并执行后续操作）");
     }
     
@@ -65,23 +61,23 @@
     [self.arr removeLastObject];
     
     NSLog(@"线程1:【解锁】");
-    [self.cond unlock];
+    [self.condition unlock];
 }
 
 // 线程二：添加数组元素
 - (void)__add {
     
-    [self.cond lock];
+    [self.condition lock];
     NSLog(@"线程2: 【加锁】");
     
     NSLog(@"线程2: 添加元素");
     [self.arr addObject:@"1"];
           
     NSLog(@"线程2: 通知线程1条件成立");
-    [self.cond signal];
+    [self.condition signal];
 
     NSLog(@"线程2: 【解锁】");
-    [self.cond unlock];
+    [self.condition unlock];
 }
 
 - (void)NSConditionAPI {
