@@ -76,4 +76,42 @@
     dispatch_semaphore_signal(self.moneySemaphore);
 }
 
+// 可以在方法内部初始化semaphore，保证每个方法使用一个semaphore
+- (void)test2 {
+    static dispatch_semaphore_t semaphore;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        semaphore = dispatch_semaphore_create(1);
+    });
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    // ......
+    
+    dispatch_semaphore_signal(semaphore);
+}
+
+
+// 将创建过程宏定义
+
+// 开始并等待
+#define SemaphonreBegin \
+static dispatch_semaphore_t semaphore; \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+    semaphore = dispatch_semaphore_create(1); \
+}); \
+dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+
+// 结束
+#define SemaphonreEnd \
+dispatch_semaphore_signal(semaphore);
+
+- (void)test3 {
+    SemaphonreBegin;
+    
+    // ......
+    
+    SemaphonreEnd;
+}
+
 @end
