@@ -6,11 +6,10 @@
 //
 
 #import "ViewController.h"
-#import <pthread/pthread.h>
 
 @interface ViewController ()
 
-@property (nonatomic, assign) pthread_rwlock_t lock;
+@property (nonatomic, strong) dispatch_queue_t queue;
 
 @end
 
@@ -19,67 +18,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 初始化锁
-    pthread_rwlock_init(&_lock, NULL);
-    
-    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+    self.queue = dispatch_queue_create("rw_queue", DISPATCH_QUEUE_CONCURRENT);
     
     for (int i = 0; i < 20; i++) {
-        [[[NSThread alloc] initWithTarget:self selector:@selector(read) object:nil] start];
+        [self read];
         
-        dispatch_async(queue, ^{
-            
-        });
-        
-        dispatch_barrier_async(queue, ^{
-            
-        });
-        
+        [self write];
     }
 }
 
 - (void)read {
-    pthread_rwlock_rdlock(&_lock);
-    
-    NSLog(@"%s", __func__);
-    sleep(1);
-    
-    pthread_rwlock_unlock(&_lock);
+    dispatch_async(self.queue, ^{
+        NSLog(@"%s", __func__);
+        sleep(1);
+    });
 }
 
 - (void)write {
-    pthread_rwlock_wrlock(&_lock);
-    
-    NSLog(@"%s", __func__);
-    sleep(1);
-    
-    pthread_rwlock_unlock(&_lock);
+    dispatch_barrier_async(self.queue, ^{
+        NSLog(@"%s", __func__);
+        sleep(1);
+    });
 }
-
-- (void)dealloc {
-    pthread_rwlock_destroy(&_lock);
-}
-
-- (void)rwlockAPI {
-    // 初始化
-    pthread_rwlock_t lock;
-    pthread_rwlock_init(&lock, NULL);
-    
-    // 读-加锁
-    pthread_rwlock_rdlock(&lock);
-    // 读-尝试加锁
-    pthread_rwlock_tryrdlock(&lock);
-    
-    // 写-加锁
-    pthread_rwlock_wrlock(&lock);
-    // 写-尝试加锁
-    pthread_rwlock_trywrlock(&lock);
-    
-    // 解锁
-    pthread_rwlock_unlock(&lock);
-    // 销毁
-    pthread_rwlock_destroy(&lock);
-}
-
 
 @end
