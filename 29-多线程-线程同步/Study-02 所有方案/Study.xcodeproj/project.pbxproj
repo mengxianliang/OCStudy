@@ -29,6 +29,7 @@
 		C254691226E5A566002666E4 /* NSConditionLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C254691126E5A566002666E4 /* NSConditionLockDemo.m */; };
 		C254691526E5B0E9002666E4 /* SerialQueueDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C254691426E5B0E9002666E4 /* SerialQueueDemo.m */; };
 		C254691826E5B3CF002666E4 /* SemaphoreDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C254691726E5B3CF002666E4 /* SemaphoreDemo.m */; };
+		C254691B26E5BA75002666E4 /* SynchronizedDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C254691A26E5BA75002666E4 /* SynchronizedDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		C254691426E5B0E9002666E4 /* SerialQueueDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerialQueueDemo.m; sourceTree = "<group>"; };
 		C254691626E5B3CF002666E4 /* SemaphoreDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemaphoreDemo.h; sourceTree = "<group>"; };
 		C254691726E5B3CF002666E4 /* SemaphoreDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemaphoreDemo.m; sourceTree = "<group>"; };
+		C254691926E5BA75002666E4 /* SynchronizedDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SynchronizedDemo.h; sourceTree = "<group>"; };
+		C254691A26E5BA75002666E4 /* SynchronizedDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SynchronizedDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,8 @@
 				C254691426E5B0E9002666E4 /* SerialQueueDemo.m */,
 				C254691626E5B3CF002666E4 /* SemaphoreDemo.h */,
 				C254691726E5B3CF002666E4 /* SemaphoreDemo.m */,
+				C254691926E5BA75002666E4 /* SynchronizedDemo.h */,
+				C254691A26E5BA75002666E4 /* SynchronizedDemo.m */,
 			);
 			path = Locks;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				5EA7B68626E4ECA000ECD9C7 /* NSConditionDemo.m in Sources */,
 				C254690026E1B72B002666E4 /* OSUnfairLockDemo.m in Sources */,
 				C254679C26D4FB78002666E4 /* ViewController.m in Sources */,
+				C254691B26E5BA75002666E4 /* SynchronizedDemo.m in Sources */,
 				C254690F26E1FEA8002666E4 /* MutexDemo3.m in Sources */,
 				C254691526E5B0E9002666E4 /* SerialQueueDemo.m in Sources */,
 				C254690926E1F1ED002666E4 /* OSSpinLockDemo2.m in Sources */,
