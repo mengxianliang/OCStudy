@@ -16,8 +16,7 @@
 		C25467A726D4FB87002666E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C25467A626D4FB87002666E4 /* main.m */; };
 		C25467B126D4FB87002666E4 /* StudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25467B026D4FB87002666E4 /* StudyTests.m */; };
 		C25467BC26D4FB87002666E4 /* StudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25467BB26D4FB87002666E4 /* StudyUITests.m */; };
-		C254692126E704BB002666E4 /* XLProxy1.m in Sources */ = {isa = PBXBuildFile; fileRef = C254692026E704BB002666E4 /* XLProxy1.m */; };
-		C254692426E710BE002666E4 /* XLProxy2.m in Sources */ = {isa = PBXBuildFile; fileRef = C254692326E710BE002666E4 /* XLProxy2.m */; };
+		C25B728D26E742EE00128CCE /* XLGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = C25B728C26E742EE00128CCE /* XLGCDTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +55,8 @@
 		C25467B726D4FB87002666E4 /* StudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25467BB26D4FB87002666E4 /* StudyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyUITests.m; sourceTree = "<group>"; };
 		C25467BD26D4FB87002666E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C254691F26E704BB002666E4 /* XLProxy1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLProxy1.h; sourceTree = "<group>"; };
-		C254692026E704BB002666E4 /* XLProxy1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLProxy1.m; sourceTree = "<group>"; };
-		C254692226E710BE002666E4 /* XLProxy2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLProxy2.h; sourceTree = "<group>"; };
-		C254692326E710BE002666E4 /* XLProxy2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLProxy2.m; sourceTree = "<group>"; };
+		C25B728B26E742EE00128CCE /* XLGCDTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLGCDTimer.h; sourceTree = "<group>"; };
+		C25B728C26E742EE00128CCE /* XLGCDTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLGCDTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +113,8 @@
 				C254679826D4FB78002666E4 /* SceneDelegate.m */,
 				C254679A26D4FB78002666E4 /* ViewController.h */,
 				C254679B26D4FB78002666E4 /* ViewController.m */,
-				C254691F26E704BB002666E4 /* XLProxy1.h */,
-				C254692026E704BB002666E4 /* XLProxy1.m */,
-				C254692226E710BE002666E4 /* XLProxy2.h */,
-				C254692326E710BE002666E4 /* XLProxy2.m */,
+				C25B728B26E742EE00128CCE /* XLGCDTimer.h */,
+				C25B728C26E742EE00128CCE /* XLGCDTimer.m */,
 				C254679D26D4FB78002666E4 /* Main.storyboard */,
 				C25467A026D4FB87002666E4 /* Assets.xcassets */,
 				C25467A226D4FB87002666E4 /* LaunchScreen.storyboard */,
@@ -277,11 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C254679C26D4FB78002666E4 /* ViewController.m in Sources */,
-				C254692426E710BE002666E4 /* XLProxy2.m in Sources */,
 				C254679626D4FB78002666E4 /* AppDelegate.m in Sources */,
-				C254692126E704BB002666E4 /* XLProxy1.m in Sources */,
 				C25467A726D4FB87002666E4 /* main.m in Sources */,
 				C254679926D4FB78002666E4 /* SceneDelegate.m in Sources */,
+				C25B728D26E742EE00128CCE /* XLGCDTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

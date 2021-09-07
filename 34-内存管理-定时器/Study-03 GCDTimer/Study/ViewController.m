@@ -6,12 +6,13 @@
 //
 
 #import "ViewController.h"
-#import "XLProxy1.h"
-#import "XLProxy2.h"
+#import "XLGCDTimer.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) dispatch_source_t timer;
+
+@property (nonatomic, copy) NSString *task;
 
 @end
 
@@ -20,11 +21,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self startTimer];
+//    [self makeGCDTimer];
+    [self makeCustomTimer];
+}
+
+- (void)makeCustomTimer {
+    self.task = [XLGCDTimer execTask:^{
+        NSLog(@"111 %@", [NSThread currentThread]);
+    } start:2 interval:1 repeats:YES async:YES];
+    
 }
 
 // 方案三：GCD定时器
-- (void)startTimer {
+- (void)makeGCDTimer {
     
     // 获取队列
     dispatch_queue_t queue = dispatch_get_main_queue();
@@ -51,6 +60,10 @@
 
 void timerFire(void *param) {
     NSLog(@"222");
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [XLGCDTimer cancleTask:self.task];
 }
 
 @end
