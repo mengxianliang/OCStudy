@@ -13,14 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XLGCDTimer : NSObject
 
-
-/// 自定义GCD定时器
-/// @param task 执行任务
-/// @param start 开始时间
-/// @param interval 间隔
-/// @param repeats 是否重复
-/// @param async 是否异步执行
 + (NSString *)execTask:(XLTaskBlock)task start:(NSTimeInterval)start interval:(NSTimeInterval)interval repeats:(BOOL)repeats async:(BOOL)async;
+
++ (NSString *)execTask:(id)target selector:(SEL)selecctor start:(NSTimeInterval)start interval:(NSTimeInterval)interval repeats:(BOOL)repeats async:(BOOL)async;
 
 + (void)cancleTask:(NSString *)name;
 
