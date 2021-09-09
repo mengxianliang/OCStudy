@@ -10,7 +10,19 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Person *person = [[[Person alloc] init] autorelease];
+        for (int i = 0; i < 1000; i++) {
+            NSObject *obj = [[[NSObject alloc] init] autorelease];
+        }
+        @autoreleasepool {
+            for (int i = 0; i < 1000; i++) {
+                NSObject *obj = [[[NSObject alloc] init] autorelease];
+            }
+            @autoreleasepool {
+                for (int i = 0; i < 1000; i++) {
+                    NSObject *obj = [[[NSObject alloc] init] autorelease];
+                }
+            }
+        }
     }
     return 0;
 }
@@ -40,5 +52,16 @@ int main(int argc, const char * argv[]) {
  objc_autoreleasePoolPop(atautoreleasepoolobj);
  
  
+ 
+ */
+
+/**
+ 
+ atautoreleasepoolobj = objc_autoreleasePoolPush();
+ atautoreleasepoolobj = 0x1038;
+ 
+ Person *person = [[[Person alloc] init] autorelease];
+ 
+ objc_autoreleasePoolPop(0x1038);
  
  */
