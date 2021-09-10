@@ -17,20 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-////    {
-////        Person *person = [[Person alloc] init];
-////    }
-//
-//    @autoreleasepool {
-//        Person *person = [[Person alloc] init];
-//    }
-    {
-        
-    }
+    
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(doSomeThing) object:nil];
+    [thread start];
+     
+    NSLog(@"%s", __func__);
+}
+
+- (void)doSomeThing {
+    NSLog(@"%s %@ ", __func__, [NSThread currentThread]);
     
     Person *person = [[Person alloc] init];
-    
-    NSLog(@"%s", __func__);
 }
 
 - (void)viewWillAppear:(BOOL)animated {

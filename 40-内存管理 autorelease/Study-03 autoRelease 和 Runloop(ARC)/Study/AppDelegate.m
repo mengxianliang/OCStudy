@@ -15,7 +15,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self addRunLoopObserver];
+//    [self addRunLoopObserver];
     return YES;
 }
 
