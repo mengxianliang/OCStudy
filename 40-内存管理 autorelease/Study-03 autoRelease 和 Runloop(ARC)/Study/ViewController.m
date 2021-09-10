@@ -17,8 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    Person *person = [[[Person alloc] init] autorelease];
-     
+////    {
+////        Person *person = [[Person alloc] init];
+////    }
+//
+//    @autoreleasepool {
+//        Person *person = [[Person alloc] init];
+//    }
+    {
+        
+    }
+    
+    Person *person = [[Person alloc] init];
+    
     NSLog(@"%s", __func__);
 }
 

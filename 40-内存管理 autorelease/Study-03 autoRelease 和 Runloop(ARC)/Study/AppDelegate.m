@@ -15,10 +15,44 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self addRunLoopObserver];
     return YES;
 }
 
+- (void)addRunLoopObserver {
+    // 创建Observer
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreate(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, observeRunLoopActicities, NULL);
+    // 添加Observer到RunLoop中
+    CFRunLoopAddObserver(CFRunLoopGetMain(), observer, kCFRunLoopCommonModes);
+    // 释放
+    CFRelease(observer);
+}
+
+void observeRunLoopActicities(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info)
+{
+    switch (activity) {
+        case kCFRunLoopEntry:
+            NSLog(@"kCFRunLoopEntry");
+            break;
+        case kCFRunLoopBeforeTimers:
+            NSLog(@"kCFRunLoopBeforeTimers");
+            break;
+        case kCFRunLoopBeforeSources:
+            NSLog(@"kCFRunLoopBeforeSources");
+            break;
+        case kCFRunLoopBeforeWaiting:
+            NSLog(@"kCFRunLoopBeforeWaiting");
+            break;
+        case kCFRunLoopAfterWaiting:
+            NSLog(@"kCFRunLoopAfterWaiting");
+            break;
+        case kCFRunLoopExit:
+            NSLog(@"kCFRunLoopExit");
+            break;
+        default:
+            break;
+    }
+}
 
 #pragma mark - UISceneSession lifecycle
 
