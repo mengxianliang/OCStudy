@@ -16,6 +16,9 @@
 		C25467A726D4FB87002666E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C25467A626D4FB87002666E4 /* main.m */; };
 		C25467B126D4FB87002666E4 /* StudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25467B026D4FB87002666E4 /* StudyTests.m */; };
 		C25467BC26D4FB87002666E4 /* StudyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C25467BB26D4FB87002666E4 /* StudyUITests.m */; };
+		C2CF915B26EF2CAF0010DCF9 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CF915A26EF2CAF0010DCF9 /* NewsModel.m */; };
+		C2CF916126EF3B250010DCF9 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CF916026EF3B250010DCF9 /* NewsCell.m */; };
+		C2CF916426EF3D330010DCF9 /* NewsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C2CF916326EF3D330010DCF9 /* NewsPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		C25467B726D4FB87002666E4 /* StudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C25467BB26D4FB87002666E4 /* StudyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyUITests.m; sourceTree = "<group>"; };
 		C25467BD26D4FB87002666E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2CF915926EF2CAF0010DCF9 /* NewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
+		C2CF915A26EF2CAF0010DCF9 /* NewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		C2CF915F26EF3B250010DCF9 /* NewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		C2CF916026EF3B250010DCF9 /* NewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		C2CF916226EF3D330010DCF9 /* NewsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsPresenter.h; sourceTree = "<group>"; };
+		C2CF916326EF3D330010DCF9 /* NewsPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPresenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +119,7 @@
 				C254679826D4FB78002666E4 /* SceneDelegate.m */,
 				C254679A26D4FB78002666E4 /* ViewController.h */,
 				C254679B26D4FB78002666E4 /* ViewController.m */,
+				C2CF916526EF3E790010DCF9 /* MVP */,
 				C254679D26D4FB78002666E4 /* Main.storyboard */,
 				C25467A026D4FB87002666E4 /* Assets.xcassets */,
 				C25467A226D4FB87002666E4 /* LaunchScreen.storyboard */,
@@ -135,6 +145,19 @@
 				C25467BD26D4FB87002666E4 /* Info.plist */,
 			);
 			path = StudyUITests;
+			sourceTree = "<group>";
+		};
+		C2CF916526EF3E790010DCF9 /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				C2CF916226EF3D330010DCF9 /* NewsPresenter.h */,
+				C2CF916326EF3D330010DCF9 /* NewsPresenter.m */,
+				C2CF915926EF2CAF0010DCF9 /* NewsModel.h */,
+				C2CF915A26EF2CAF0010DCF9 /* NewsModel.m */,
+				C2CF915F26EF3B250010DCF9 /* NewsCell.h */,
+				C2CF916026EF3B250010DCF9 /* NewsCell.m */,
+			);
+			path = MVP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +289,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2CF915B26EF2CAF0010DCF9 /* NewsModel.m in Sources */,
 				C254679C26D4FB78002666E4 /* ViewController.m in Sources */,
+				C2CF916126EF3B250010DCF9 /* NewsCell.m in Sources */,
 				C254679626D4FB78002666E4 /* AppDelegate.m in Sources */,
 				C25467A726D4FB87002666E4 /* main.m in Sources */,
 				C254679926D4FB78002666E4 /* SceneDelegate.m in Sources */,
+				C2CF916426EF3D330010DCF9 /* NewsPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U8DVA2L62W;
 				INFOPLIST_FILE = Study/Info.plist;
-				LD_GENERATE_MAP_FILE = YES;
+				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,7 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U8DVA2L62W;
 				INFOPLIST_FILE = Study/Info.plist;
-				LD_GENERATE_MAP_FILE = YES;
+				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
