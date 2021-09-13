@@ -34,7 +34,6 @@
     self.tableView = [[UITableView alloc] initWithFrame:self.controller.view.bounds];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerClass:[NewsCell class] forCellReuseIdentifier:@"NewsCell"];
     [self.controller.view addSubview:self.tableView];
     [self.tableView reloadData];
 }
@@ -44,11 +43,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell" forIndexPath:indexPath];
+    NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NewsCell"];
     if (!cell) {
         cell = [[NewsCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"NewsCell"];
     }
-    cell.model = self.newsData[indexPath.row];
+    NewsModel *model = self.newsData[indexPath.row];
+    cell.textLabel.text = model.title;
+    cell.detailTextLabel.text = model.content;
     return cell;
 }
 

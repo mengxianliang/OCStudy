@@ -9,19 +9,6 @@
 
 @implementation NewsCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-    }
-    return self;
-}
-
-- (void)setModel:(NewsModel *)model {
-    _model = model;
-    
-    self.textLabel.text = model.title;
-    self.detailTextLabel.text = model.content;
-}
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
