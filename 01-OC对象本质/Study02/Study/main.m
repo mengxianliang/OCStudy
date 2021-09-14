@@ -37,6 +37,8 @@ struct Student_IMPL {
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Student *stu = [[Student alloc] init];
+        stu->_age = 5;
+        stu->_no = 6;
         
         // 获得NSObject实例对象的成员变量所占用的大小 -> 8
         NSLog(@"stu = %zd",class_getInstanceSize([Student class]));
