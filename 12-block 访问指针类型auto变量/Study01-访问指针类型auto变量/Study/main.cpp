@@ -106,7 +106,9 @@ struct __AtAutoreleasePool {
 };
 
 #define __OFFSETOFIVAR__(TYPE, MEMBER) ((long long) &((TYPE *)0)->MEMBER)
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_c69f92_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"person = %p",11};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_aded77_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"person = %p",11};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_aded77_mi_1 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"block = %@",10};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_aded77_mi_2 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"1",1};
 
 
 
@@ -34252,6 +34254,8 @@ struct Person_IMPL {
 
 #pragma clang assume_nonnull end
 
+typedef void(*XLBlock)(void);
+
 
 struct __main_block_impl_0 {
   struct __block_impl impl;
@@ -34267,8 +34271,8 @@ struct __main_block_impl_0 {
 static void __main_block_func_0(struct __main_block_impl_0 *__cself) {
   Person *person = __cself->person; // bound by copy
 
-            NSLog((NSString *)&__NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_c69f92_mi_0,person);
-        }
+                NSLog((NSString *)&__NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_aded77_mi_0, person);
+            }
 static void __main_block_copy_0(struct __main_block_impl_0*dst, struct __main_block_impl_0*src) {_Block_object_assign((void*)&dst->person, (void*)src->person, 3/*BLOCK_FIELD_IS_OBJECT*/);}
 
 static void __main_block_dispose_0(struct __main_block_impl_0*src) {_Block_object_dispose((void*)src->person, 3/*BLOCK_FIELD_IS_OBJECT*/);}
@@ -34282,9 +34286,29 @@ static struct __main_block_desc_0 {
 int main(int argc, const char * argv[]) {
     /* @autoreleasepool */ { __AtAutoreleasePool __autoreleasepool; 
 
-        Person *person = ((Person *(*)(id, SEL))(void *)objc_msgSend)((id)((Person *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Person"), sel_registerName("alloc")), sel_registerName("init"));
-        void (*block)(void) = ((void (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, person, 570425344));
-        ((void (*)(__block_impl *))((__block_impl *)block)->FuncPtr)((__block_impl *)block);
+        XLBlock block;
+
+        {
+            Person *person = ((Person *(*)(id, SEL))(void *)objc_msgSend)((id)((Person *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Person"), sel_registerName("alloc")), sel_registerName("init"));
+
+
+
+
+            block = ((void (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA, person, 570425344));
+
+            NSLog((NSString *)&__NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_aded77_mi_1,block);
+
+            ((void (*)(__block_impl *))((__block_impl *)block)->FuncPtr)((__block_impl *)block);
+
+            ((void (*)(id, SEL))(void *)objc_msgSend)((id)person, sel_registerName("release"));
+        }
+
+        NSLog((NSString *)&__NSConstantStringImpl__var_folders_83_tbkbq4g934b9cpwjfttxjvnh0000gn_T_main_aded77_mi_2);
+
+
+
+
+
     }
     return 0;
 }
