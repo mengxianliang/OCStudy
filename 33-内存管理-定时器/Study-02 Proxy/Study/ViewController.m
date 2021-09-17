@@ -72,6 +72,7 @@
     XLProxy1 *proxy = [XLProxy1 proxyWithTarget:self];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:proxy selector:@selector(timerTest) userInfo:nil repeats:YES];
 }
+
 // 方案二：消息转发(NSProxy)
 - (void)plan3 {
     XLProxy2 *proxy = [XLProxy2 proxyWithTarget:self];

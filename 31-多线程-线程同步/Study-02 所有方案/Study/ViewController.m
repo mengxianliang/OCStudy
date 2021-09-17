@@ -29,10 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    SynchronizedDemo *demo = [[SynchronizedDemo alloc] init];
-//    [demo otherTest];
-    [demo ticketsTest];
-    [demo moneyTest];
+    NSConditionLockDemo *demo = [[NSConditionLockDemo alloc] init];
+    [demo otherTest];
+//    [demo ticketsTest];
+//    [demo moneyTest];
     
     
     
