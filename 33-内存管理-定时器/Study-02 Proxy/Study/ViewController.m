@@ -82,7 +82,6 @@
 
 // 方案三：GCD定时器
 - (void)plan4 {
-    
 //    // 获取队列
 //    dispatch_queue_t queue = dispatch_get_main_queue();
 //    // 创建定时器
@@ -95,10 +94,6 @@
 //    });
 //    // 启动定时器
 //    dispatch_resume(timer);
-    
-    
-    
-    
 }
 
 
