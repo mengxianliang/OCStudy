@@ -23,10 +23,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5EE980022810F14400ABC285 /* MJClassInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
 		C2ECEC1026C0C09D00EE5473 /* Study */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Study; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2ECEC1326C0C09D00EE5473 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2ECEC1A26C0C5E600EE5473 /* main-arm64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "main-arm64.cpp"; sourceTree = "<group>"; };
-		C2ECEC2126C2819B00EE5473 /* MJClassInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 		C2ECEC1226C0C09D00EE5473 /* Study */ = {
 			isa = PBXGroup;
 			children = (
-				C2ECEC2126C2819B00EE5473 /* MJClassInfo.h */,
+				5EE980022810F14400ABC285 /* MJClassInfo.h */,
 				C2ECEC1A26C0C5E600EE5473 /* main-arm64.cpp */,
 				C2ECEC1326C0C09D00EE5473 /* main.m */,
 			);
